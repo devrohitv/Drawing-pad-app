@@ -11,16 +11,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: 'Set up archived Oracle JDK 17.0.1'
-        uses: oracle-actions/setup-java@v1
-        with:
-          website: 'oracle.com'
-          release: '17'
-          version: '17.0.1'
-          global: true
-      - name: Set JAVA_HOME
-        run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV
-      
+      # - name: 'Set up archived Oracle JDK 17.0.1'
+      #   uses: oracle-actions/setup-java@v1
+      #   with:
+      #     website: 'oracle.com'
+      #     release: '17'
+      #     version: '17.0.1'
+      #     global: true
+      # - name: Set JAVA_HOME
+      #   run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV
+      - name: run sh file
+        run: sh install.sh
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
