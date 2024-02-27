@@ -18,5 +18,8 @@ jobs:
     - name: Print PATH Variable
       run: echo "PATH=$PATH"
 
+    - name: java version
+      run: java --varsion
+
 
         
