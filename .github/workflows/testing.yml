@@ -1,0 +1,22 @@
+name: testing java
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: java
+    runs-on: ubuntu-latest
+    steps:
+    - name: java variable
+      run: |
+        echo "java variable name"
+    - name: Print Environment Variables
+      run: echo "JAVA_HOME=$JAVA_HOME"
+
+    - name: Print PATH Variable
+      run: echo "PATH=$PATH"
+
+
+        
